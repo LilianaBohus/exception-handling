@@ -17,6 +17,17 @@ class BookstoreApplication {
             System.out.println("Exception: " + e.getMessage());
         }
 
+
+        try {
+            bookstore.sellBook("To Kill a Mockingbird", 2);
+            System.out.println("Book sold successfully.");
+
+            bookstore.sellBook("The Great Gatsby", 5);
+            System.out.println("Book sold successfully.");
+        } catch (BookNotFoundException | InsufficientStockException e) {
+            System.out.println("Exception:" + e.getMessage());
+        }
+
         bookstore.displayBooks();
     }
 }
